@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../component/navbar";
-import Hero from "../component/hero";
-import Hero2 from "@/component/hero-2";
-import About from "@/component/about";
-import Services from "@/component/service";
-import PortfolioSection from "@/component/porto";
-import Testimonials from "@/component/testimonial";
-import Contact from "@/component/contact";
+import Hero2 from "../component/hero-2";
+import About from "../component/about";
+import Services from "../component/service";
+import PortfolioSection from "../component/porto";
+import Testimonials from "../component/testimonial";
+import Contact from "../component/contact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
