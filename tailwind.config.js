@@ -18,7 +18,8 @@ module.exports = {
                 "background-dark": "#18191a",
             },
             fontFamily: {
-                "display": ["Inter"]
+                display: ['var(--font-geist-sans)'],  // sesuai RootLayout
+                mono: ['var(--font-geist-mono)'],
             },
             borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
         },

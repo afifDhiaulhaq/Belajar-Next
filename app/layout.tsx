@@ -9,7 +9,7 @@ import PortfolioSection from "../component/porto";
 import Testimonials from "../component/testimonial";
 import Contact from "../component/contact";
 import ScrollToTop from "../component/scrollToTop";
-import Section360 from "../component/360v";
+import Panorama360 from "../component/parinama360";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,17 +43,10 @@ export default function RootLayout({
               <About />
               <Services />
               <PortfolioSection />
-
-              {/* Section 360° */}
-              <Section360
-                title="Interaktif 360° Produk"
-                amount={36}          // jumlah frame
-                path="/images/360/"  // folder public/images/360/
-                fileName="image_"    // file image_1.jpg, image_2.jpg ...
-              />
-
+              <Panorama360 />
               <Testimonials />
               <Contact />
+              {children}
 
               {/* Jika ingin children dinamis, uncomment */}
               {/* {children} */}
