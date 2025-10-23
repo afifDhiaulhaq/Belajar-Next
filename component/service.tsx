@@ -2,7 +2,7 @@
 
 export default function Services() {
   return (
-    <section className="py-16 md:py-24">
+    <section id="service" className="py-16 md:py-24">
       {/* Judul Section */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-white">
