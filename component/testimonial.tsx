@@ -19,7 +19,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24">
+    <section id="testimonials" className="py-16 md:py-24">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-white">
           Testimonials

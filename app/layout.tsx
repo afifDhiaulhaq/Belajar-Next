@@ -8,6 +8,7 @@ import Services from "../component/service";
 import PortfolioSection from "../component/porto";
 import Testimonials from "../component/testimonial";
 import Contact from "../component/contact";
+import ScrollToTop from "../component/scrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,6 +56,7 @@ export default function RootLayout({
               <Contact />
               {/* {children} */}
             </div>
+            <ScrollToTop />
           </main>
           <footer className="flex flex-col gap-6 px-5 py-10 text-center">
             <p className="text-stone-500 dark:text-stone-400 text-base">

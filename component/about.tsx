@@ -2,7 +2,7 @@
 
 export default function About() {
     return (
-    <section className="py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <section id="about" className="py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
         {/* Teks Kiri */}
         <div className="space-y-4">
         <h2 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-white">
