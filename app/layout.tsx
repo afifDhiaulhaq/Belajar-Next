@@ -9,6 +9,7 @@ import PortfolioSection from "../component/porto";
 import Testimonials from "../component/testimonial";
 import Contact from "../component/contact";
 import ScrollToTop from "../component/scrollToTop";
+import Section360 from "../component/360v";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,37 +28,42 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
-        />
-      </head>
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background-light dark:bg-background-dark font-display text-stone-800 dark:text-stone-200`}
-      >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="antialiased bg-background-light dark:bg-background-dark font-display text-stone-800 dark:text-stone-200">
         <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+          {/* Navbar fixed di atas */}
           <Navbar />
 
+          {/* Main content */}
           <main className="flex-1">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
               <Hero2 />
               <About />
               <Services />
               <PortfolioSection />
+
+              {/* Section 360° */}
+              <Section360
+                title="Interaktif 360° Produk"
+                amount={36}          // jumlah frame
+                path="/images/360/"  // folder public/images/360/
+                fileName="image_"    // file image_1.jpg, image_2.jpg ...
+              />
+
               <Testimonials />
               <Contact />
+
+              {/* Jika ingin children dinamis, uncomment */}
               {/* {children} */}
             </div>
+
+            {/* Scroll to top button */}
             <ScrollToTop />
           </main>
+
+          {/* Footer */}
           <footer className="flex flex-col gap-6 px-5 py-10 text-center">
             <p className="text-stone-500 dark:text-stone-400 text-base">
               © 2024 Afif Designs. All rights reserved.
