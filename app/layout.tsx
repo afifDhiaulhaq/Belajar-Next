@@ -46,7 +46,7 @@ export default function RootLayout({
               <Panorama360 />
               <Testimonials />
               <Contact />
-              {children}
+              {/* {children} */}
 
               {/* Jika ingin children dinamis, uncomment */}
               {/* {children} */}
