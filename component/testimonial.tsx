@@ -7,14 +7,14 @@ const Testimonials: React.FC = () => {
       date: "2023-08-15",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuBIM_VUsZXab9pgLrHzkQ-35CVswqJMTZyduYgroyPWZDPKbNJiO0T9sMiR4-fZpCkh8MTXXUcuIBgOR-HuWVBZAqBke8sCdKnVKYp3fLgB6bMHYgrGqNOnsG0rFa0oQClhTWZrc8s_d2QDQN29XSmCyAjKBqKv0dfx3DyWTI5K-T8Rkz3oaS7gPsjsuvarXaE0hGhQ2q7OBmBp30spaxybe8mn5YpjZc3HkTHqUGzhq5f0-GsY_n_i5-QXWOURQPzUGeJYrww3Wtum",
-      text: "Afif transformed my living space into a haven of tranquility and style. His attention to detail and understanding of my preferences were exceptional.",
+      text: "bono transformed my living space into a haven of tranquility and style. His attention to detail and understanding of my preferences were exceptional.",
     },
     {
       name: "Ethan Bennett",
       date: "2023-07-22",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuBUFJ7AkeydBnhBUE6usqmgSDMZdkEBUJlUmiLtBKnA4jnvON_guzhNDOi4rLYfV-ZD9UPDmwwmjJ0pyUz_50d_Nu3TpbM5Proiyzd3v3q3rAZxis--kHJW1kx0IkOg2wAi9aGSqqi3BYpw_t-YZOK_8N4KaFAfPlV3wI_bcj5xzj4XbeOweAwMbJ3J8OCuks9hSXYsh0ciu7kk_b4H8S2s2xP8IZ2-OZ-2xx5ClyQmj_JKn6dULNX1v4QmkenEc4r2NpW27jAABbAL",
-      text: "Working with Afif was a seamless and enjoyable experience. He brought my vision to life with creativity and professionalism.",
+      text: "Working with Bono was a seamless and enjoyable experience. He brought my vision to life with creativity and professionalism.",
     },
   ];
 

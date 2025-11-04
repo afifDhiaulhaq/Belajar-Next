@@ -3,23 +3,23 @@ import React from "react";
 const ExperienceSection = () => {
   const experiences = [
     {
-      year: "2018 - Present",
-      role: "Lead Interior Designer",
-      company: "Sterling & Co. Interiors",
+      year: "2024 - NOW",
+      role: "Interior Designer",
+      company: "MAGNARECON",
       desc:
         "Leading high-end residential and commercial projects from concept to completion. Responsible for client acquisition, design development, and project management, ensuring a seamless and luxurious client experience.",
     },
     {
-      year: "2014 - 2018",
-      role: "Senior Designer",
-      company: "Elysian Design House",
+      year: "2023",
+      role: "Interior Designer",
+      company: "PT INTINYATEKNOLOGI",
       desc:
         "Managed a team of junior designers and oversaw multiple luxury hospitality projects. Specialized in material sourcing and bespoke furniture design, contributing to award-winning hotel interiors.",
     },
     {
-      year: "2012 - 2014",
-      role: "Junior Interior Designer",
-      company: "Atelier Interiors",
+      year: "2021 - 2022",
+      role: "Intership Interior Designer",
+      company: "PT STUDIOSIXTYNINE",
       desc:
         "Assisted senior designers in creating design presentations, 3D renderings, and material boards. Gained foundational experience in client relations and on-site project coordination.",
     },
