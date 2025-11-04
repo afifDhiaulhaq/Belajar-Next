@@ -1,108 +1,88 @@
-// components/Navbar.tsx
 "use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About", href: "#about" },
-    { name: "Service", href: "#service" },
-    { name: "Portfolio", href: "#portfolio" }, // ✅ typo diperbaiki
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Projects", href: "/projects" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
-  const toggleMobileMenu = () => setMobileOpen(!mobileOpen);
-
   return (
-    <nav className="fixed top-0 w-full z-50 bg-gray-800/90 backdrop-blur-md">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-
-          {/* Logo + Title */}
-          <div className="flex items-center space-x-2">
-            <Image
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Logo"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
-            />
-            <span className="text-white font-bold text-xl">Afif Design</span>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden sm:flex space-x-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="sm:hidden">
-            <button
-              onClick={toggleMobileMenu}
-              className="text-gray-300 hover:text-white focus:outline-none"
-            >
-              {!mobileOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
+    <header className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm flex items-center justify-between border-b border-b-[#f5f4f0] dark:border-b-[#2a271a] px-4 sm:px-6 lg:px-10 py-3">
+      {/* Logo */}
+      <div className="flex items-center gap-4 text-[#181711] dark:text-primary">
+        <div className="size-4">
+          <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor" />
+          </svg>
         </div>
+        <h2 className="text-[#181711] dark:text-white text-lg font-bold tracking-[-0.015em]">
+          Bono Design
+        </h2>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="sm:hidden px-4 pt-2 pb-3 space-y-1 bg-gray-800/90 backdrop-blur-md">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
-            >
-              {item.name}
-            </a>
-          ))}
+      {/* Desktop Menu */}
+      <nav className="hidden md:flex flex-1 justify-end">
+        <div className="flex items-center gap-9">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`relative text-sm font-medium transition-all duration-300 px-1 text-[#181711] dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 ${isActive ? "text-yellow-500 dark:text-yellow-500 font-bold" : ""}`}
+              >
+                {item.name}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-yellow-500 dark:bg-yellow-500 transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                />
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden flex text-[#181711] dark:text-white"
+        onClick={() => setOpen(!open)}
+        aria-label="Toggle Menu"
+      >
+        {open ? (
+          <span className="text-xl font-bold">✕</span>
+        ) : (
+          <span className="text-xl font-bold">☰</span>
+        )}
+      </button>
+
+      {/* Mobile Drawer */}
+      {open && (
+        <div className="absolute top-full left-0 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#f5f4f0] dark:border-[#2a271a] flex flex-col gap-4 p-6 md:hidden">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`relative text-base font-medium transition-all duration-300 px-1 text-[#181711] dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 ${isActive ? "text-yellow-500 dark:text-yellow-500 font-bold" : ""}`}
+                onClick={() => setOpen(false)}
+              >
+                {item.name}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-yellow-500 dark:bg-yellow-500 transition-all duration-300 ${isActive ? "w-full" : "w-0"}`}
+                />
+              </Link>
+            );
+          })}
         </div>
       )}
-    </nav>
+    </header>
   );
 }

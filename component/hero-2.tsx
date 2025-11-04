@@ -21,7 +21,7 @@ const Hero2: React.FC = () => {
                 Designing Modern Spaces That Inspire Calm &amp; Clarity
             </h1>
             <p className="text-white/90 text-base @[480px]:text-lg max-w-2xl">
-                Hi, I’m Afif — an interior designer passionate about transforming
+                Hi, I’m Bono — an interior designer passionate about transforming
                 spaces with simplicity and purpose.
             </p>
             </div>

@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../component/navbar";
-import Hero2 from "../component/hero-2";
+// import Hero2 from "../component/hero-2";
 import About from "../component/about";
 import Services from "../component/service";
 import PortfolioSection from "../component/porto";
 import Testimonials from "../component/testimonial";
 import Contact from "../component/contact";
 import ScrollToTop from "../component/scrollToTop";
-import Panorama360 from "../component/parinama360";
+// import Panorama360 from "../component/parinama360";
+import ExperienceSection from "../component/experiance";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,17 +43,16 @@ export default function RootLayout({
           {/* Main content */}
           <main className="flex-1">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-              <Hero2 />
+              {/* <Hero2 /> */}
               <About />
               <Services />
+              <ExperienceSection />
               <PortfolioSection />
-              <Panorama360 />
+              {/* <Panorama360 /> */}
               <Testimonials />
               <Contact />
               {/* {children} */}
 
-              {/* Jika ingin children dinamis, uncomment */}
-              {/* {children} */}
             </div>
 
             {/* Scroll to top button */}
@@ -62,7 +62,7 @@ export default function RootLayout({
           {/* Footer */}
           <footer className="flex flex-col gap-6 px-5 py-10 text-center">
             <p className="text-stone-500 dark:text-stone-400 text-base">
-              © 2024 Afif Designs. All rights reserved.
+              © 2024 Bono Designs. All rights reserved.
             </p>
           </footer>
         </div>
