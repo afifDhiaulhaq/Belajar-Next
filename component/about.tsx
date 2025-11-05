@@ -20,7 +20,7 @@ blend of style, form and function. It is also a form of storytelling.
             className="w-full h-full bg-center bg-no-repeat bg-cover"
             style={{
             backgroundImage:
-                'url("/person.jpg")',
+                'url("/asset/person.jpg")',
             }}
         />
         </div>

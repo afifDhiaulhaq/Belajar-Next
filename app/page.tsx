@@ -7,6 +7,7 @@ import Contact from "../component/contact";
 import ScrollToTop from "../component/scrollToTop";
 import ExperienceSection from "../component/experiance";
 import type { Metadata } from "next";
+import Hero2 from "../component/hero-2";
 
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <Hero2 />
       <About />
       <Services />
       <ExperienceSection />
