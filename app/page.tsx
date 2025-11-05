@@ -8,6 +8,8 @@ import ScrollToTop from "../component/scrollToTop";
 import ExperienceSection from "../component/experiance";
 import type { Metadata } from "next";
 import Hero2 from "../component/hero-2";
+import KitchenPage from "../component/contoh";
+import Panorama360 from "../component/parinama360";
 
 
 export const metadata: Metadata = {
@@ -26,7 +28,8 @@ export default function Home() {
       <Services />
       <ExperienceSection />
       <PortfolioSection />
-      {/* <Panorama360 /> */}
+      <Panorama360 />
+      <KitchenPage />
       <Testimonials />
       <Contact />
     </>

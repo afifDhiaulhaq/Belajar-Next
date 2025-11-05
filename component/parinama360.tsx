@@ -17,7 +17,7 @@ export default function Panorama360() {
       if (containerRef.current && !viewerRef.current) {
         const viewer = new Viewer({
           container: containerRef.current,
-          panorama: "/360image-3.jpg",
+          panorama: "asset/360image-3.jpg",
           caption: "Panorama 360° - Demo",
           loadingTxt: "Memuat panorama...",
           navbar: ["autorotate", "move", "fullscreen"], // 🚫 tanpa zoom
