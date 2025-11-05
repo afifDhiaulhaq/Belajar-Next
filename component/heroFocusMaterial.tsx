@@ -23,33 +23,25 @@ const HeroSpotlight: React.FC<HeroSpotlightProps> = ({ heroImage, materials }) =
   return (
     <div className="w-full max-w-5xl mx-auto">
       {/* Hero Container */}
-      <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-lg">
+      <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
         {/* Hero Image */}
         <img src={heroImage} alt="Hero" className="w-full h-full object-cover" />
 
-        {/* Bayangan kiri & kanan full height */}
+        {/* Spotlight Overlay */}
         {selected && (
           <>
             {/* Kiri */}
             <div
+              className="absolute top-0 h-full bg-black/50 transition-all duration-500"
               style={{
-                position: "absolute",
-                top: 0,
-                height: "100%",
-                backgroundColor: "rgba(0,0,0,0.5)",
-                transition: "left 0.5s ease, width 0.5s ease",
                 left: 0,
                 width: `${selected.focusBox.x}%`,
               }}
             />
             {/* Kanan */}
             <div
+              className="absolute top-0 h-full bg-black/50 transition-all duration-500"
               style={{
-                position: "absolute",
-                top: 0,
-                height: "100%",
-                backgroundColor: "rgba(0,0,0,0.5)",
-                transition: "left 0.5s ease, width 0.5s ease",
                 left: `${selected.focusBox.x + selected.focusBox.width}%`,
                 width: `${100 - (selected.focusBox.x + selected.focusBox.width)}%`,
               }}
@@ -69,7 +61,7 @@ const HeroSpotlight: React.FC<HeroSpotlightProps> = ({ heroImage, materials }) =
             <img
               src={mat.thumbnail}
               alt={mat.name}
-              className="w-full h-24 object-cover"
+              className="w-full aspect-square object-cover"
             />
           </div>
         ))}
