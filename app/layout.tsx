@@ -31,18 +31,7 @@ export default function RootLayout({
 
           {/* Main content */}
           <main className="flex-1">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-              {/* <Hero2 /> */}
-              {/* <About />
-              <Services />
-              <ExperienceSection />
-              <PortfolioSection /> */}
-              {/* <Panorama360 /> */}
-              {/* <Testimonials />
-              <Contact /> */}
               {children}
-
-            </div>
 
             {/* Scroll to top button */}
             <ScrollToTop />

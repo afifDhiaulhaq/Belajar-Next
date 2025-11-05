@@ -24,14 +24,16 @@ export default function Home() {
   return (
     <>
       <Hero2 />
-      <About />
-      <Services />
-      <ExperienceSection />
-      <PortfolioSection />
-      <Panorama360 />
-      <KitchenPage />
-      <Testimonials />
-      <Contact />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <About />
+        <Services />
+        <ExperienceSection />
+        <PortfolioSection />
+        {/* <Panorama360 />
+        <KitchenPage /> */}
+        <Testimonials />
+        <Contact />
+      </div>
     </>
 );
 }

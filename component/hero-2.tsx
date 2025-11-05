@@ -1,44 +1,59 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const images = [
+  "asset/image1.png",
+  "asset/image2.png",
+  "asset/image4.png",
+];
 
 const Hero2: React.FC = () => {
-    return (
-    <section className="@container">
-        <div className="@[480px]:p-4">
-        <div
-            className='flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-6 pb-10 @[480px]:px-12'
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000); // ganti gambar tiap 5 detik
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="w-screen h-screen relative overflow-hidden flex items-center justify-center">
+      {/* Sliding Background */}
+      <div
+        className="absolute inset-0 flex transition-transform duration-1000 ease-in-out"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {images.concat(images[0]).map((img, idx) => (
+          <div
+            key={idx}
+            className="w-screen h-screen bg-center bg-cover flex-shrink-0"
             style={{
-                backgroundImage:
-                    'linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBaywWnHtvvlzUTJCX2llPqgs5ybBnl-1xF5CJFI_zlAmfXdOlMtJ0lf05s3nlXBj21EPAsLEz16QLzhKHHmy0ISl-al_7VpgwyBiDxop-Xiyje0oQnQJJxfusU-MzY3XeAuhdpw-3_gR9-TAbmZMzhTpEH6wOco_a-KM-M47U6_WGO5DpHB6DEy9U2OZnBvpauWNi5YYND5ditw4M8is9keS3lK-xmOYfKvZR7vNNky4XBq2ejIzoZLgx87KOaNP_bnzo_0KykclJO")',
-                borderRadius: '10px',
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(${img})`,
             }}
+          />
+        ))}
+      </div>
 
-        >
-            {/* Teks utama */}
-            <div className="flex flex-col gap-4 text-left">
-            <h1 className="text-white text-4xl font-black leading-tight tracking-tighter @[480px]:text-6xl">
-                Designing Modern Spaces That Inspire Calm &amp; Clarity
-            </h1>
-            <p className="text-white/90 text-base @[480px]:text-lg max-w-2xl">
-                Hi, I’m Bono — an interior designer passionate about transforming
-                spaces with simplicity and purpose.
-            </p>
-            </div>
+      {/* Konten Teks di Tengah */}
+      <div className="relative z-10 text-center px-6 md:px-12">
+        <h1 className="text-white text-4xl font-black leading-tight tracking-tighter md:text-6xl">
+          Designing Modern Spaces That Inspire Calm &amp; Clarity
+        </h1>
 
-            {/* Tombol CTA */}
-            <div className="flex flex-wrap gap-4">
-            <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-black text-base font-bold transition-transform hover:scale-105">
-                <span>View My Work</span>
-            </button>
-            <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary/20 dark:bg-primary/30 text-white text-base font-bold transition-transform hover:scale-105">
-                <span>Contact Me</span>
-            </button>
-            </div>
+        {/* Tombol CTA */}
+        <div className="flex flex-wrap gap-4 mt-6 justify-center">
+          <button className="flex min-w-[84px] items-center justify-center rounded-lg h-12 px-6 bg-primary text-black font-bold hover:scale-105 transition-transform">
+            View My Work
+          </button>
+          <button className="flex min-w-[84px] items-center justify-center rounded-lg h-12 px-6 bg-primary/20 dark:bg-primary/30 text-white font-bold hover:scale-105 transition-transform">
+            Contact Me
+          </button>
         </div>
-        </div>
+      </div>
     </section>
-    );
+  );
 };
 
 export default Hero2;

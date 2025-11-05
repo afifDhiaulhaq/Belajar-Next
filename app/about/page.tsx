@@ -1,6 +1,6 @@
 import Link from "next/link";
-import PortfolioSection from "../../component/porto";
 import { Metadata } from "next";
+import About from "../../component/about";
 
 export const metadata: Metadata = {
   title: "Bono Design | Projects",
@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProjectsPage() {
+export default function AboutPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <PortfolioSection />
+      <About />
     </main>
   );
 }
